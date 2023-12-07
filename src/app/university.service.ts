@@ -27,8 +27,12 @@ export class UniversityService {
   getUniversityById(id: number): Observable<Universite> {
     return this.http.get<Universite>(`${this.baseUrl}/${id}`);
   }
-  affecterUniversiteToFoyer(idFoyer: number, nom: string): Observable<Universite> {
-    const url = `${this.baseUrl}/lol/${idFoyer}/${nom}`;
+  affecterUniversiteToFoyer(idFoyer: number, universityName: string): Observable<Universite> {
+    const url = `${this.baseUrl}/${idFoyer}/assign/${universityName}`;
     return this.http.put<Universite>(url, {}); 
+  }
+  desaffecterFoyerFromUniversite(idUniversite: number): Observable<Universite> {
+    const url = `${this.baseUrl}/des/${idUniversite}`;
+    return this.http.put<Universite>(url, {});
   }
 }

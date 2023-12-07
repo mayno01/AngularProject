@@ -1,5 +1,5 @@
 import { Component, OnInit, } from '@angular/core';
-import { UniversityService } from '../university.service'; // Update the path
+import { UniversityService } from '../university.service'; 
 import { Universite } from 'src/models/universite.model';
 import { Router } from '@angular/router';
 
@@ -10,7 +10,7 @@ import { Router } from '@angular/router';
 })
 export class UniversityComponent implements OnInit {
 
-  universities: any[] = []; // Update the type based on your Universite model
+  universities: any[] = []; 
 
   constructor(private router: Router,private universityService: UniversityService) { }
 
@@ -30,16 +30,16 @@ export class UniversityComponent implements OnInit {
       
     );
   }
-  addUniversity(universityData: any) { // Adjust the type based on your form data structure
+  addUniversity(universityData: any) { 
     this.universityService.addUniversite(universityData).subscribe(
       (data: any) => {
         console.log('University added:', data);
-        // Optionally, you can update the UI or perform additional actions after adding the university
-        this.getUniversities(); // Refresh the list of universities after addition
+
+        this.getUniversities(); 
       },
       (error) => {
         console.log(error);
-        // Handle error scenarios
+     
       }
     );
   }
@@ -47,12 +47,12 @@ export class UniversityComponent implements OnInit {
     this.universityService.deleteUniversite(universityId).subscribe(
       () => {
         console.log('University deleted');
-        // Optionally, update the UI or perform additional actions after deletion
-        this.getUniversities(); // Refresh the list of universities after deletion
+
+        this.getUniversities();
       },
       (error) => {
         console.log(error);
-        // Handle error scenarios
+    
       }
     );
   }

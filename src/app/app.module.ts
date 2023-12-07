@@ -12,6 +12,7 @@ import { FoyerFormComponent } from './foyer-form/foyer-form.component';
 import { FormsModule } from '@angular/forms';
 import { UpdateUniversityComponent } from './update-university/update-university.component';
 import { AffecterFoyerUniComponent } from './affecter-foyer-uni/affecter-foyer-uni.component';
+import { TableViewComponent } from './table-view/table-view.component';
 
 
 @NgModule({
@@ -22,7 +23,8 @@ import { AffecterFoyerUniComponent } from './affecter-foyer-uni/affecter-foyer-u
     UniversityComponent,
     FoyerFormComponent,
     UpdateUniversityComponent,
-    AffecterFoyerUniComponent
+    AffecterFoyerUniComponent,
+    TableViewComponent
    
    
   

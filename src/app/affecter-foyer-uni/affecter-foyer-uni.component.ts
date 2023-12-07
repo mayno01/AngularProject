@@ -10,6 +10,7 @@ import { Universite } from 'src/models/universite.model';
 export class AffecterFoyerUniComponent {
   idFoyer: number | undefined;
   nomUniversity: string | undefined;
+  idUniversite: number | undefined;
 
   constructor(private universityService: UniversityService) {}
   affectUniversityToFoyer(): void {
@@ -27,6 +28,24 @@ export class AffecterFoyerUniComponent {
     } else {
       console.warn('Please enter both ID Foyer and University Name.');
     }
+  }
+
+  desaffecterFoyerFromUniversity(): void {
+    if (this.idUniversite !== undefined){
+    this.universityService.desaffecterFoyerFromUniversite(this.idUniversite).subscribe(
+      (result: Universite) => {
+        console.log('Foyer desaffected from university:', result);
+        // Handle success, if needed
+      },
+      (error: any) => {
+        console.error('Error desaffecting foyer from university:', error);
+        // Handle error, if needed
+      }
+    );
+  } else{
+    console.warn('pealse enter ID universite')
+
+  }
   }
 
 }
