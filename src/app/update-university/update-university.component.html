@@ -1,20 +1,18 @@
 <div class="container">
-    <h2>Update University</h2>
-    
-    <form (ngSubmit)="updateUniversity()" #updateForm="ngForm">
-      <div class="form-group">
-        <label for="nomUniversite">University Name:</label>
-        <input type="text" class="form-control" id="nomUniversite" name="nomUniversite" [(ngModel)]="university.nomUniversite" required>
-      </div>
-  
-      <div class="form-group">
-        <label for="adresse">University Address:</label>
-        <input type="text" class="form-control" id="adresse" name="adresse" [(ngModel)]="university.adresse" required>
-      </div>
-  
+  <form (ngSubmit)="updateUniversity()" #updateForm="ngForm" class="needs-validation university-form" novalidate>
+    <h3>Update University</h3>
+    <div class="form-group">
+      <label for="nomUniversite">University Name:</label>
+      <input type="text" class="form-control" id="nomUniversite" name="nomUniversite" [(ngModel)]="university.nomUniversite" required>
+    </div>
 
-  
-      <button type="submit" class="btn btn-primary">Update</button>
-    </form>
-  </div>
-  
+    <div class="form-group">
+      <label for="adresse">University Address:</label>
+      <input type="text" class="form-control" id="adresse" name="adresse" [(ngModel)]="university.adresse" required>
+    </div>
+
+    <!-- Add other form fields as needed -->
+
+    <button type="submit" class="button-17">Update</button>
+  </form>
+</div>

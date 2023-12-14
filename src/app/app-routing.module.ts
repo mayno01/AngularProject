@@ -1,11 +1,13 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { UniversityComponent } from './university/university.component';
+
 import { BlocComponent } from './bloc/bloc.component';  
 import { FoyerListComponent } from './foyer-list/foyer-list.component';
 import { FoyerFormComponent } from './foyer-form/foyer-form.component';
-import { UpdateUniversityComponent } from './update-university/update-university.component';
+
 import { AffecterFoyerUniComponent } from './affecter-foyer-uni/affecter-foyer-uni.component';
+import { FormUniversiteComponent } from './form-universite/form-universite.component';
+
  
 
 
@@ -15,11 +17,24 @@ const routes: Routes = [
   {path:"foyers", component:FoyerListComponent},
   {path:"addFoyers", component:FoyerFormComponent},
   {path:"blocs", component:BlocComponent},
-  {path:"university", component:UniversityComponent},
-  { path: 'update-university/:id', component: UpdateUniversityComponent },
+  {
+    path: 'university',
+    loadChildren: () =>
+      import('./university-routing/university-routing.module').then(
+        (m) => m.UniversityRoutingModule
+      ),
+  },
+
   
   {path:"foyUni", component:AffecterFoyerUniComponent},
-
+  {path:"adduniversite", component:FormUniversiteComponent},
+  {
+    path: 'update-university/:id',
+    loadChildren: () =>
+      import('../app/update-university/update-universityroute-routing.module').then(
+        (m) => m.UpdateUniversityrouteRoutingModule
+      ),
+  },
 ];
 
 @NgModule({

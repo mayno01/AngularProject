@@ -1,16 +1,34 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { UniversityService } from '../university.service';  
 import { Universite } from 'src/models/universite.model';
+import { trigger, state, style, animate, transition } from '@angular/animations';
+
 
 @Component({
   selector: 'app-affecter-foyer-uni',
   templateUrl: './affecter-foyer-uni.component.html',
-  styleUrls: ['./affecter-foyer-uni.component.css']
+  styleUrls: ['./affecter-foyer-uni.component.css'],
+  animations: [
+    trigger('fadeInOut', [
+      state('true', style({ opacity: 1 })),
+      state('false', style({ opacity: 0 })),
+      transition('false => true', animate('500ms ease-in')),
+      transition('true => false', animate('500ms ease-out')),
+    ])
+  ]
+  
 })
-export class AffecterFoyerUniComponent {
+export class AffecterFoyerUniComponent implements OnInit{
   idFoyer: number | undefined;
   nomUniversity: string | undefined;
   idUniversite: number | undefined;
+  showForm1: boolean = true;
+  ngOnInit(): void {
+  }
+
+  toggleForms() {
+    this.showForm1 = !this.showForm1;
+  }
 
   constructor(private universityService: UniversityService) {}
   affectUniversityToFoyer(): void {

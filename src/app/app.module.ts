@@ -13,6 +13,11 @@ import { FormsModule } from '@angular/forms';
 import { UpdateUniversityComponent } from './update-university/update-university.component';
 import { AffecterFoyerUniComponent } from './affecter-foyer-uni/affecter-foyer-uni.component';
 import { TableViewComponent } from './table-view/table-view.component';
+import { HeaderComponent } from './header/header.component';
+import { FooterComponent } from './footer/footer.component';
+import { SidebarComponent } from './sidebar/sidebar.component';
+import { FormUniversiteComponent } from './form-universite/form-universite.component';
+import { UnidetailsComponent } from './unidetails/unidetails.component';
 
 
 @NgModule({
@@ -24,7 +29,12 @@ import { TableViewComponent } from './table-view/table-view.component';
     FoyerFormComponent,
     UpdateUniversityComponent,
     AffecterFoyerUniComponent,
-    TableViewComponent
+    TableViewComponent,
+    HeaderComponent,
+    FooterComponent,
+    SidebarComponent,
+    FormUniversiteComponent,
+    UnidetailsComponent
    
    
   

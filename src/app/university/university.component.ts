@@ -9,7 +9,7 @@ import { Router } from '@angular/router';
   styleUrls: ['./university.component.css']
 })
 export class UniversityComponent implements OnInit {
-
+  selectedUniversity: Universite | undefined;
   universities: any[] = []; 
 
   constructor(private router: Router,private universityService: UniversityService) { }
@@ -18,6 +18,10 @@ export class UniversityComponent implements OnInit {
     this.getUniversities();
   }
 
+
+  showDetails(university: Universite) {
+    this.selectedUniversity = university;
+  }
   getUniversities() {
     this.universityService.getAllUniversities().subscribe(
       (data: any[]) => {
@@ -43,19 +47,21 @@ export class UniversityComponent implements OnInit {
       }
     );
   }
-  deleteUniversity(universityId: number) {
-    this.universityService.deleteUniversite(universityId).subscribe(
-      () => {
-        console.log('University deleted');
-
-        this.getUniversities();
-      },
-      (error) => {
-        console.log(error);
-    
-      }
-    );
+  deleteUniversity(universityId: number, universityName: string) {
+    const confirmDelete = confirm(`Are you sure you want to delete ${universityName}?`);
+    if (confirmDelete) {
+      this.universityService.deleteUniversite(universityId).subscribe(
+        () => {
+          console.log('University deleted');
+          this.getUniversities();
+        },
+        (error) => {
+          console.log(error);
+        }
+      );
+    }
   }
+  
   updateUniversity(university: Universite): void {
     const universityId = university.idUniversite;
     this.router.navigate(['/update-university', universityId]);
