@@ -1,15 +1,13 @@
 import { Component, OnInit } from '@angular/core';
 import { BlocService } from '../bloc.service';
 import { Router } from '@angular/router';
-
 import { Bloc } from 'src/models/bloc.model';
-
 @Component({
-  selector: 'app-bloc',
-  templateUrl: './bloc.component.html',
-  styleUrls: ['./bloc.component.css']
+  selector: 'app-form-bloc',
+  templateUrl: './form-bloc.component.html',
+  styleUrls: ['./form-bloc.component.css']
 })
-export class BlocComponent  implements OnInit{
+export class FormBlocComponent implements OnInit{
   blocs: any[] = []; 
   constructor(private router: Router, private blocService: BlocService) { }
   ngOnInit(): void {
@@ -25,19 +23,6 @@ export class BlocComponent  implements OnInit{
       }
     );
     }
-    deleteBloc(idBloc: number) {
-      this.blocService.deleteBloc(idBloc).subscribe(
-        () => {
-          console.log('bloc deleted');
-      
-          this.getBlocs();
-        },
-        (error) => {
-          console.log(error);
-       
-        }
-      );
-    }
     addbloc(blocData: any) { 
       this.blocService.addbloc(blocData).subscribe(
         (data: any) => {
@@ -51,10 +36,4 @@ export class BlocComponent  implements OnInit{
         }
       );
     }
-    updateBloc(bloc: Bloc): void {
-      const blocId = bloc.idBloc;
-      this.router.navigate(['/update-bloc', blocId]);
-    }
-  
-   
 }

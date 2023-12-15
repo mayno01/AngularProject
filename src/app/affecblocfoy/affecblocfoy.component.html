@@ -1,0 +1,21 @@
+<div class="container">
+    
+  
+    <div class="section-container">
+      <div class="section">
+        <h3>Affecter Bloc to Foyer</h3>
+        <form #updateForm="ngForm" (ngSubmit)="affecterBlocAFoyer()" class="needs-validation university-form" novalidate>
+          <div class="form-group">
+            <label for="idBloc">Bloc ID:</label>
+            <input type="number" id="idBloc" name="idBloc" [(ngModel)]="blocId" class="form-control">
+          </div>
+          <div class="form-group">
+            <label for="idFoyer">Foyer ID:</label>
+            <input type="number" id="idFoyer" name="idFoyer" [(ngModel)]="foyerId" class="form-control">
+          </div>
+          <button type="submit" class="button-17">Affecter Bloc to Foyer</button>
+        </form>
+      </div>
+    </div>
+  </div>
+  

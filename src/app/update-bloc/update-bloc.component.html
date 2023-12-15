@@ -1,0 +1,19 @@
+<div class="container">
+    <h2>Update Bloc</h2>
+    <form (ngSubmit)="updateBloc()" #updateForm="ngForm" class="needs-validation university-form" novalidate>
+      <div class="form-group">
+        <label for="nomBloc">Bloc Name:</label>
+        <input type="text" class="form-control" id="nomBloc" name="nomBloc" [(ngModel)]="bloc.nomBloc" required>
+      </div>
+  
+      <div class="form-group">
+        <label for="capaciteBloc">Bloc Capacité:</label>
+        <input type="text" class="form-control" id="capaciteBloc" name="capaciteBloc" [(ngModel)]="bloc.capaciteBloc" required>
+      </div>
+  
+      <!-- Add other form fields as needed -->
+  
+      <button type="submit" class="button-17">Update</button>
+    </form>
+  </div>
+  

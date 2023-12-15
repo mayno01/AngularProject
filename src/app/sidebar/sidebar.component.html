@@ -22,10 +22,15 @@
         
       </div>
       
-    <div class="nav-button"><i class="fas fa-images"></i><span>Block</span></div>
-    <div class="nav-button"><i class="fas fa-thumbtack"></i><span>etudiant</span></div>
+      <div class="nav-button" (click)="navigateToBlock()">
+        <i class="fas fa-images"></i><span>Block</span>
+      </div>
+      <div class="nav-button" (click)="navigateToEtudiant()">
+        <i class=" fas fa-thumbtack"></i><span>Etudiant</span>
+      </div>
 
     
+
     <div id="nav-content-highlight"></div>
   </div>
   <input id="nav-footer-toggle" type="checkbox"/>
@@ -43,10 +48,13 @@
     </div>
     <div id="nav-footer-content">
       <a (click)="navigateToAddUniversity()">Ajouter Universite</a> <br>
-      <a (click)="navigateToAffecter()">Affecter/desaffecter Foyer</a>
+      <a (click)="navigateToAffecter()">Affecter/desaffecter Foyer</a><br>
+      <a (click)="navigateToAddBlock()">ajouter block</a><br>
+      <a (click)="navigateToAddEtudiant()">Ajouter Etudiant</a><br>
+      <a (click)="navigateToaffecterBloc()">Affecter Bloc</a>
 
      
-     
+      
     </div>
   </div>
 </div>

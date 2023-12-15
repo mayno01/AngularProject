@@ -18,5 +18,19 @@ export class SidebarComponent {
   navigateToAffecter() {
     this.router.navigate(['/foyUni']);
   }
-
+  navigateToBlock() {
+    this.router.navigateByUrl('/blocs');
+  }
+  navigateToEtudiant() {
+    this.router.navigateByUrl('/etudiants');
+  }
+  navigateToAddEtudiant() {
+    this.router.navigateByUrl('/addetudiant');
+  }
+  navigateToAddBlock() {
+    this.router.navigateByUrl('/addBlock');
+  }
+  navigateToaffecterBloc() {
+    this.router.navigateByUrl('/aff');
+  }
 }

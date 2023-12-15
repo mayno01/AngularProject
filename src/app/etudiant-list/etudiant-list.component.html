@@ -1,0 +1,46 @@
+<div class="universite-content">
+    <div class="">
+      <div class="card-body">
+        <div class="container">
+          <div class="container">
+            <h2>List of Etudiants <small>by Ghada omri</small></h2>
+            <ul class="responsive-table">
+              <li class="table-header">
+                <div class="col col-1">#</div>
+                <div class="col col-2">Name</div>
+                <div class="col col-3">Last Name</div>
+                <div class="col col-4">Date of Birth</div>
+         
+                <div class="col col-7">Actions</div>
+              </li>
+              <ng-container *ngFor="let etudiant of etudiants; let i = index">
+                <li class="table-row">
+                  <div class="col col-1" data-label="#">{{ i + 1 }}</div>
+                  <div class="col col-2" data-label="Name">{{ etudiant.nomEt }}</div>
+                  <div class="col col-3" data-label="Last Name">{{ etudiant.prenomEt }}</div>
+                  <div class="col col-4" data-label="Date of Birth">{{ etudiant.dateNaissance }}</div>
+                  
+                  <div class="col col-7" data-label="Actions">
+                <!-- Replace this anchor tag -->
+                <button (click)="navigateToEditEtudiant(etudiant.idEtudiant)" style="color: green; margin-right: 5px;">
+                    <i class="fa fa-pencil" aria-hidden="true"></i>
+                  </button>
+                  
+                  
+                      
+                  <button (click)="deleteEtu(i)" style="color: red;">
+                    <i class="fa fa-trash" aria-hidden="true"></i>
+                  </button>
+                  
+                    <!-- Add other actions as needed -->
+                  </div>
+                </li>
+              </ng-container>
+            </ul>
+          </div>
+        </div>
+      </div>
+ 
+    </div>
+  </div>
+  

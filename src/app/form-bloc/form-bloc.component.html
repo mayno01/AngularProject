@@ -1,0 +1,15 @@
+<form #blocForm="ngForm" (ngSubmit)="addbloc(blocForm.value)" class="needs-validation university-form" novalidate>
+    <h3>Add a New bloc</h3>
+    <div class="form-group">
+        <label for="nomBloc">bloc Name:</label>
+        <input type="text" id="nomBloc" name="nomBloc" ngModel required class="form-control">
+        <div class="invalid-feedback">Please provide a valid bloc name.</div>
+    </div>
+    <div class="form-group">
+        <label for="capaciteBloc">Capacité Bloc:</label>
+        <input type="text" id="capaciteBloc" name="capaciteBloc" ngModel required class="form-control">
+        <div class="invalid-feedback">Please provide a valid bloc capacity.</div>
+    </div>
+    <!-- Add other form fields as needed -->
+    <button type="submit" class="button-17">Add bloc</button>
+</form>

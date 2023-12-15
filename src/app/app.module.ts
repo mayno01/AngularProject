@@ -18,6 +18,13 @@ import { FooterComponent } from './footer/footer.component';
 import { SidebarComponent } from './sidebar/sidebar.component';
 import { FormUniversiteComponent } from './form-universite/form-universite.component';
 import { UnidetailsComponent } from './unidetails/unidetails.component';
+import { UpdateBlocComponent } from './update-bloc/update-bloc.component';
+import { FormBlocComponent } from './form-bloc/form-bloc.component';
+import { AffecblocfoyComponent } from './affecblocfoy/affecblocfoy.component';
+import { EtudiantFormComponent } from './etudiant-form/etudiant-form.component';
+import { EtudiantEditComponent } from './etudiant-edit/etudiant-edit.component';
+import { EtudiantListComponent } from './etudiant-list/etudiant-list.component';
+import { BlocModuleComponent } from './bloc-module/bloc-module.component';
 
 
 @NgModule({
@@ -34,7 +41,14 @@ import { UnidetailsComponent } from './unidetails/unidetails.component';
     FooterComponent,
     SidebarComponent,
     FormUniversiteComponent,
-    UnidetailsComponent
+    UnidetailsComponent,
+    UpdateBlocComponent,
+    FormBlocComponent,
+    AffecblocfoyComponent,
+    EtudiantFormComponent,
+    EtudiantEditComponent,
+    EtudiantListComponent,
+
    
    
   

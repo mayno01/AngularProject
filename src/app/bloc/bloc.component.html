@@ -1,1 +1,39 @@
 <p>bloc works!</p>
+<div class="universite-content">
+  <div class="">
+    <div class="card-body">
+      <div class="container">
+        <div class="container">
+          <h2>List of Blocs <small> by Tarek </small></h2>
+          <ul class="responsive-table">
+            <li class="table-header">
+              <div class="col col-1">#</div>
+              <div class="col col-2">Name</div>
+              <div class="col col-3">Capacité</div>
+        
+              <div class="col col-5">Actions</div>
+            </li>
+            <li class="table-row" *ngFor="let bloc of blocs">
+              <div class="col col-1" data-label="id">{{ bloc.idBloc }}</div>
+              <div class="col col-2" data-label="bloc Name">{{ bloc.nomBloc }}</div>
+              <div class="col col-3" data-label="capaciteBloc">{{ bloc.capaciteBloc }}</div>
+             
+              <div class="col col-5" data-label="actions">
+                <button (click)="deleteBloc(bloc.idBloc)" style="margin-right: 15px;">
+                  <i class="fa fa-trash" aria-hidden="true"></i>
+                </button>
+              
+          
+                <button (click)="updateBloc(bloc)" style="margin-right: 15px;">
+                  <i class="fa fa-refresh" aria-hidden="true"></i>
+                </button>
+              </div>
+            
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>

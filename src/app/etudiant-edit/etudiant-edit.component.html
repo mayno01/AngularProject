@@ -1,0 +1,24 @@
+<div class="container">
+    <form (ngSubmit)="onSubmit()" #etudiantForm="ngForm" class="needs-validation university-form" novalidate>
+      <h3>Edit Etudiant</h3>
+      <div class="form-group">
+        <label for="nom">Nom Etudiant:</label>
+        <input type="text" class="form-control" id="nom" name="nom" [(ngModel)]="etudiant.nomEt" required>
+      </div>
+  
+      <div class="form-group">
+        <label for="prenomEtudiant">Prenom Etudiant:</label>
+        <input type="text" class="form-control" id="prenomEtudiant" name="prenomEtudiant" [(ngModel)]="etudiant.prenomEt" required>
+      </div>
+  
+      <div class="form-group">
+        <label for="dateNaissance">Date de Naissance:</label>
+        <input type="date" class="form-control" id="dateNaissance" name="dateNaissance" [(ngModel)]="etudiant.dateNaissance" required>
+      </div>
+  
+      <!-- Add other form fields as needed -->
+  
+      <button type="submit" [disabled]="!etudiantForm.form.valid" class="button-17">Update</button>
+    </form>
+  </div>
+  
