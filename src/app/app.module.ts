@@ -24,7 +24,10 @@ import { AffecblocfoyComponent } from './affecblocfoy/affecblocfoy.component';
 import { EtudiantFormComponent } from './etudiant-form/etudiant-form.component';
 import { EtudiantEditComponent } from './etudiant-edit/etudiant-edit.component';
 import { EtudiantListComponent } from './etudiant-list/etudiant-list.component';
-import { BlocModuleComponent } from './bloc-module/bloc-module.component';
+import { BlocDetailComponent } from './bloc-detail/bloc-detail.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
+
 
 
 @NgModule({
@@ -48,6 +51,9 @@ import { BlocModuleComponent } from './bloc-module/bloc-module.component';
     EtudiantFormComponent,
     EtudiantEditComponent,
     EtudiantListComponent,
+    BlocDetailComponent,
+ 
+
 
    
    
@@ -58,7 +64,8 @@ import { BlocModuleComponent } from './bloc-module/bloc-module.component';
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    BrowserAnimationsModule
   ],
   providers: [FoyerServiceService],
   bootstrap: [AppComponent]

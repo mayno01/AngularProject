@@ -7,6 +7,6 @@ import { Universite } from 'src/models/universite.model';
   styleUrls: ['./unidetails.component.css']
 })
 export class UnidetailsComponent {
-  @Input() university: Universite | undefined;
+  @Input() university!: Universite;
 
 }

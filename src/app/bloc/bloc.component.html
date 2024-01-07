@@ -1,4 +1,4 @@
-<p>bloc works!</p>
+
 <div class="universite-content">
   <div class="">
     <div class="card-body">
@@ -27,6 +27,9 @@
                 <button (click)="updateBloc(bloc)" style="margin-right: 15px;">
                   <i class="fa fa-refresh" aria-hidden="true"></i>
                 </button>
+                <button (click)="showDetails(bloc)" style="margin-right: 15px;">
+                  <i class="fa fa-info-circle" aria-hidden="true"></i>
+                </button>
               </div>
             
             </li>
@@ -35,5 +38,5 @@
       </div>
     </div>
   </div>
-
+  <app-bloc-detail *ngIf="selectedBloc" [bloc]="selectedBloc"></app-bloc-detail>
 </div>

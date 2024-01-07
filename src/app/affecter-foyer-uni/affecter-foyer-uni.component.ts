@@ -53,15 +53,15 @@ export class AffecterFoyerUniComponent implements OnInit{
     this.universityService.desaffecterFoyerFromUniversite(this.idUniversite).subscribe(
       (result: Universite) => {
         console.log('Foyer desaffected from university:', result);
-        // Handle success, if needed
+    
       },
       (error: any) => {
         console.error('Error desaffecting foyer from university:', error);
-        // Handle error, if needed
+     
       }
     );
   } else{
-    console.warn('pealse enter ID universite')
+    console.warn('please enter ID universite')
 
   }
   }

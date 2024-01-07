@@ -11,13 +11,14 @@ import { Bloc } from 'src/models/bloc.model';
 })
 export class BlocComponent  implements OnInit{
   blocs: any[] = []; 
+  selectedBloc: Bloc | undefined;
   constructor(private router: Router, private blocService: BlocService) { }
   ngOnInit(): void {
     this.getBlocs();
   }
   getBlocs() {
     this.blocService.getAllBlocs().subscribe(
-      (data: Bloc[]) => { // Specify the type for the data parameter
+      (data: Bloc[]) => { 
         this.blocs = data;
       },
       (error: any) => {
@@ -26,17 +27,18 @@ export class BlocComponent  implements OnInit{
     );
     }
     deleteBloc(idBloc: number) {
-      this.blocService.deleteBloc(idBloc).subscribe(
-        () => {
-          console.log('bloc deleted');
-      
-          this.getBlocs();
-        },
-        (error) => {
-          console.log(error);
-       
-        }
-      );
+      const confirmDelete = confirm(`Are you sure you want to delete bloc with ID ${idBloc}?`);
+      if (confirmDelete) {
+        this.blocService.deleteBloc(idBloc).subscribe(
+          () => {
+            console.log('Bloc deleted');
+            this.getBlocs();
+          },
+          (error) => {
+            console.log(error);
+          }
+        );
+      }
     }
     addbloc(blocData: any) { 
       this.blocService.addbloc(blocData).subscribe(
@@ -56,5 +58,7 @@ export class BlocComponent  implements OnInit{
       this.router.navigate(['/update-bloc', blocId]);
     }
   
-   
+    showDetails(bloc: Bloc) {
+      this.selectedBloc = bloc;
+    }
 }
